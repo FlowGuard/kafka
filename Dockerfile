@@ -14,4 +14,7 @@ RUN curl -L -O "http://mirror.hosting90.cz/apache/kafka/${KAFKA_VERSION}/kafka_$
     rm kafka_${FULL_VERSION}.tgz && \
     ln -s kafka_${FULL_VERSION} kafka
 
+RUN mkdir -p /tmp/kafka-logs/
+EXPOSE 9092
+
 CMD /home/kafka/kafka/bin/kafka-server-start.sh /etc/kafka/server.properties
