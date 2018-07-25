@@ -1,10 +1,10 @@
 FROM openjdk:8-jre
 LABEL maintainer="jaroslav.barton@comsource.cz"
 
-RUN adduser --system --disabled-password --disabled-login --shell=/bin/bash kafka
+RUN adduser --system --disabled-password --disabled-login --uid=102 --shell=/bin/bash kafka
 
 ENV SCALA_VERSION 2.12
-ENV KAFKA_VERSION 0.11.0.0
+ENV KAFKA_VERSION 0.11.0.3
 ENV FULL_VERSION ${SCALA_VERSION}-${KAFKA_VERSION}
 
 USER kafka
